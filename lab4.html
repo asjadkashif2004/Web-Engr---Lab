@@ -2,157 +2,181 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Muhammad Asjad Kashif – Resume</title>
     <style>
-        /* ===== Simple, professional theme ===== */
+        /* ---------------- Theme ---------------- */
         :root {
-            --bg: #f7f8fa;
-            /* page background */
+            --bg: #f5f7fb;
             --paper: #ffffff;
-            /* card/paper */
-            --ink: #1f2937;
-            /* main text */
-            --muted: #6b7280;
-            /* secondary text */
+            --ink: #0f172a;
+            --muted: #64748b;
             --line: #e5e7eb;
-            /* borders */
-            --brand: #0ea5e9;
-            /* accent (cyan/blue) */
-            --brand-dark: #0284c7;
-            /* accent hover */
-            --sidebar: #0b1324;
-            /* left rail bg */
+
+            --brand: #3b82f6;
+            /* blue */
+            --brand-2: #22d3ee;
+            /* cyan accent */
+            --rail: #0b1324;
+            /* sidebar base */
+
+            --radius: 16px;
+            --shadow-sm: 0 6px 18px rgba(15, 23, 42, .08);
+            --shadow-md: 0 18px 40px rgba(15, 23, 42, .12);
+
+            --speed: 240ms;
         }
 
+        /* -------------- Base -------------- */
         * {
             box-sizing: border-box;
         }
 
+        html,
+        body {
+            height: 100%;
+        }
+
         body {
             margin: 0;
-            font: 15px/1.6 Arial, Helvetica, sans-serif;
             color: var(--ink);
             background: var(--bg);
+            font: 15px/1.6 "Inter", Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
 
         a {
             color: var(--brand);
             text-decoration: none;
+            position: relative;
         }
 
-        a:hover {
-            color: var(--brand-dark);
-            text-decoration: underline;
+        a:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 100%;
+            bottom: -2px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--brand), var(--brand-2));
+            transition: right var(--speed) ease;
         }
 
-        /* Layout (floats + % widths) */
-        .wrap {
-            max-width: 1000px;
-            margin: 24px auto;
-            padding: 0 16px;
+        a:hover:after {
+            right: 0;
+        }
+
+        /* -------------- Layout (simple flex) -------------- */
+        .wrapper {
+            max-width: 1080px;
+            margin: 34px auto;
+            padding: 0 18px;
         }
 
         .row {
-            margin-bottom: 16px;
+            display: flex;
+            gap: 18px;
         }
 
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
+        .col {
+            display: flex;
+            flex-direction: column;
         }
 
-        [class^="col-"] {
-            float: left;
-            padding: 0;
+        .left {
+            flex: 1 1 33%;
         }
 
-        .col-12 {
-            width: 100%;
+        .right {
+            flex: 1 1 67%;
         }
 
-        .col-4 {
-            width: 33.33%;
-        }
-
-        .col-8 {
-            width: 66.66%;
-        }
-
-        /* Header band */
+        /* -------------- Header -------------- */
         .header {
-            background: var(--paper);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
             border: 1px solid var(--line);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, .04);
+            background: var(--paper);
+            animation: fadeUp .6s ease both;
         }
 
-        .namebar {
-            background: linear-gradient(90deg, var(--sidebar) 0%, #111827 60%);
+        .banner {
             color: #fff;
-            padding: 18px 20px;
-            letter-spacing: .8px;
+            padding: 22px 24px;
+            letter-spacing: .6px;
+            background:
+                radial-gradient(1200px 400px at -10% -40%, rgba(34, 211, 238, .35) 0%, transparent 60%),
+                linear-gradient(100deg, #0b1324 0%, #14223f 55%, #0c1d36 100%);
         }
 
         h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            margin-top: 4px;
+            opacity: .85;
+            font-size: 14px;
         }
 
         .contact {
-            padding: 10px 20px;
-            color: var(--muted);
-            border-top: 1px solid #0f172a33;
-        }
-
-        /* Sidebar card */
-        .side {
-            background: var(--sidebar);
-            color: #d1d5db;
-            padding: 16px;
-            border: 1px solid #0f172a;
-            border-right: none;
-            min-height: 100%;
-        }
-
-        .side h2 {
-            color: #e5e7eb;
-            border-bottom: 1px solid #233;
-            padding-bottom: 6px;
-            margin: 14px 0 8px;
-            font-size: 16px;
-            letter-spacing: .5px;
-        }
-
-        .side .item {
-            margin: 8px 0 12px;
-        }
-
-        .pill {
-            display: inline-block;
-            border: 1px solid #233;
-            background: #0f1a33;
-            color: #cbd5e1;
-            padding: 3px 8px;
-            border-radius: 999px;
-            margin: 2px 6px 6px 0;
-            font-size: 12px;
-        }
-
-        /* Main content */
-        .main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            padding: 12px 24px;
             background: var(--paper);
-            padding: 16px;
-            border: 1px solid var(--line);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, .04);
+            border-top: 1px solid #0f172a22;
+            color: var(--muted);
         }
 
-        h2 {
-            margin: 6px 0 8px;
+        .contact b {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        /* -------------- Panels -------------- */
+        .panel {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            padding: 16px;
+            transition: transform var(--speed) ease, box-shadow var(--speed) ease;
+        }
+
+        .panel:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .panel h2 {
+            margin: 4px 0 10px;
             font-size: 18px;
-            color: #0f172a;
             letter-spacing: .3px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .panel h2:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 54px;
+            background: linear-gradient(90deg, var(--brand), var(--brand-2));
+            transform: scaleX(.25);
+            transform-origin: left;
+            transition: transform .45s ease;
+        }
+
+        .panel:hover h2:after {
+            transform: scaleX(1);
         }
 
         h3 {
@@ -162,166 +186,235 @@
 
         .muted {
             color: var(--muted);
-            font-size: 14px;
         }
 
-        .card {
-            border: 1px solid var(--line);
-            padding: 12px;
-            background: #fff;
+        /* -------------- Sidebar styling -------------- */
+        .sidebar {
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(180deg, #0b1324 0%, #0f1d39 100%);
+            border: 1px solid #0b1730;
+            color: #cbd5e1;
         }
 
+        .sidebar .block {
+            padding: 16px;
+        }
+
+        .sidebar h2 {
+            color: #e5e7eb;
+            border-bottom: 1px solid #192746;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .badge {
+            font-size: 12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid #1c2a4b;
+            background: #101d36;
+            color: #e5e7eb;
+            transition: transform var(--speed) ease, box-shadow var(--speed) ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 18px rgba(0, 0, 0, .22);
+        }
+
+        /* small timeline dots for education entries */
+        .edu .item {
+            position: relative;
+            padding-left: 18px;
+            margin: 10px 0 12px;
+        }
+
+        .edu .item:before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 6px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, var(--brand), var(--brand-2));
+            box-shadow: 0 0 0 3px #0f1d39;
+        }
+
+        /* -------------- Lists -------------- */
         ul {
             margin: 6px 0 0 18px;
         }
 
-        /* Section dividers */
+        li {
+            margin: 6px 0;
+        }
+
+        /* -------------- Utilities -------------- */
         .section {
+            margin-top: 12px;
+            padding-top: 12px;
             border-top: 2px solid var(--line);
-            padding-top: 10px;
-            margin-top: 6px;
         }
 
-        /* Footer note */
-        .foot {
-            color: var(--muted);
+        .footer {
             text-align: center;
-            padding: 10px 0;
+            color: var(--muted);
+            margin-top: 16px;
         }
 
-        /* Responsive: stack columns */
-        @media (max-width: 820px) {
-
-            .col-4,
-            .col-8 {
-                width: 100%;
+        /* -------------- Responsive -------------- */
+        @media (max-width: 900px) {
+            .row {
+                flex-direction: column;
             }
 
-            .side {
-                border-right: 1px solid #0f172a;
-                margin-bottom: 12px;
+            .left,
+            .right {
+                flex-basis: auto;
             }
         }
 
-        /* Print */
+        /* -------------- Motion accessibility -------------- */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* -------------- Keyframes -------------- */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* -------------- Print -------------- */
         @media print {
             body {
                 background: #fff;
             }
 
-            .wrap {
+            .wrapper {
                 margin: 0;
-                max-width: none;
                 padding: 0;
+                max-width: none;
             }
 
-            .header,
-            .main,
-            .side {
+            .panel,
+            .header {
                 box-shadow: none;
             }
 
-            a {
-                color: inherit;
-                text-decoration: none;
+            a:after {
+                display: none;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="wrap">
+    <div class="wrapper">
 
         <!-- Header -->
-        <div class="row header">
-            <div class="col-12 namebar">
+        <div class="header">
+            <div class="banner">
                 <h1>MUHAMMAD ASJAD KASHIF</h1>
+                <div class="subtitle">Computer Science Student · Web & Mobile Development · Graphic Design</div>
             </div>
-            <div class="col-12 contact">
-                <!-- Phone removed per request -->
-                <strong>Email:</strong> <a href="mail:asjdkashif2004@gmail.com">ajdkashif2004@gmail.com</a>
-                &nbsp;•&nbsp;
-                &nbsp;•&nbsp;
-                <strong>GitHub:</strong> <a href="https://github.com/asjadkashif2004">github.com/asjadkashif200</a>
+            <div class="contact">
+                <div><b>Email:</b> <a href="mailto:ajdkashif2004@gmail.com">ajdkashif2004@gmail.com</a></div>
+                <div><b>LinkedIn:</b> <a
+                        href="https://www.linkedin.com/in/muhammad-asjad-kashif-b115613605/">linkedin.com/in/muhammad-asjad-kashif-b115613605</a>
+                </div>
+                <div><b>GitHub:</b> <a href="https://github.com/asjadkashif200">github.com/asjadkashif200</a></div>
             </div>
         </div>
 
         <!-- Body -->
-        <div class="row">
+        <div class="row" style="margin-top:18px;">
             <!-- Sidebar -->
-            <aside class="col-4 side">
-                <h2>Education</h2>
-                <div class="item">
-                    <strong>Matriculation — Computer</strong><br>
-                    Fauji Foundation School Quetta II<br>
-                    <span class="muted">2018–2020</span>
-                </div>
-                <div class="item">
-                    <strong>FSc — ICS</strong><br>
-                    FG Boys Degree College Quetta<br>
-                    <span class="muted">2020–2022</span>
-                </div>
-                <div class="item">
-                    <strong>BS Computer Science</strong><br>
-                    NUST Balochistan Campus<br>
-                    <span class="muted">2023–2027 (expected)</span>
+            <aside class="col left panel sidebar">
+                <div class="block edu">
+                    <h2>Education</h2>
+                    <div class="item">
+                        <strong>Matriculation — Computer</strong><br>
+                        Fauji Foundation School Quetta II<br>
+                        <span class="muted">2018–2020</span>
+                    </div>
+                    <div class="item">
+                        <strong>FSc — ICS</strong><br>
+                        FG Boys Degree College Quetta<br>
+                        <span class="muted">2020–2022</span>
+                    </div>
+                    <div class="item">
+                        <strong>BS Computer Science</strong><br>
+                        NUST Balochistan Campus<br>
+                        <span class="muted">2023–2027 (expected)</span>
+                    </div>
                 </div>
 
-                <h2>Skills</h2>
-                <div class="item">
-                    <div class="pill">C++</div>
-                    <div class="pill">Python</div>
-                    <div class="pill">Dart</div>
-                    <div class="pill">HTML</div>
-                    <div class="pill">CSS</div>
-                    <div class="pill">JavaScript</div>
-                    <div class="pill">Flutter</div>
-                    <div class="pill">Firebase</div>
-                    <div class="pill">MySQL</div>
-                    <div class="pill">Neo4j</div>
-                    <div class="pill">MongoDB</div>
-                    <div class="pill">VS Code</div>
-                    <div class="pill">MS Office</div>
-                    <div class="pill">Cisco Packet Tracer</div>
-                    <div class="pill">Ubuntu</div>
-                    <div class="pill">WSL</div>
-                    <div class="pill">Photoshop</div>
-                    <div class="pill">Canva</div>
-                    <div class="pill">CapCut</div>
-                    <div class="pill">InShot</div>
+                <div class="block">
+                    <h2>Skills</h2>
+                    <div class="badges">
+                        <span class="badge">C++</span><span class="badge">Python</span><span class="badge">Dart</span>
+                        <span class="badge">HTML</span><span class="badge">CSS</span><span
+                            class="badge">JavaScript</span>
+                        <span class="badge">Flutter</span><span class="badge">Firebase</span>
+                        <span class="badge">MySQL</span><span class="badge">Neo4j</span><span
+                            class="badge">MongoDB</span>
+                        <span class="badge">VS Code</span><span class="badge">MS Office</span>
+                        <span class="badge">Cisco Packet Tracer</span><span class="badge">Ubuntu</span><span
+                            class="badge">WSL</span>
+                        <span class="badge">Photoshop</span><span class="badge">Canva</span><span
+                            class="badge">CapCut</span><span class="badge">InShot</span>
+                    </div>
                 </div>
             </aside>
 
             <!-- Main -->
-            <main class="col-8 main">
-                <section>
+            <main class="col right">
+                <section class="panel">
                     <h2>About Me</h2>
-                    <div class="card">
+                    <p class="card-text">
                         I'm a passionate Computer Science student with a strong interest in web and mobile app
                         development and graphic design.
-                        I enjoy building modern, user-friendly apps with tools like Flutter and Firebase, and I’ve
-                        contributed to hands-on, impactful projects.
-                    </div>
+                        I enjoy building modern, user-friendly applications using tools like Flutter and Firebase, and
+                        I’ve contributed to hands-on, impactful projects.
+                    </p>
                 </section>
 
-                <section class="section">
+                <section class="panel section">
                     <h2>Experience</h2>
-                    <div class="item">
+                    <div style="margin-bottom:10px;">
                         <h3>Teaching Experience</h3>
                         <ul class="muted">
-                            <li>Quetta Grammar School — Sep 2022 – Dec 2022</li>
-                            <li>Tufos Academy — Sep 2023 – present</li>
+                            <li>Quetta Grammar School — <em>Sep 2022 – Dec 2022</em></li>
+                            <li>Tufos Academy — <em>Sep 2023 – present</em></li>
                         </ul>
                     </div>
-                    <div class="item">
+                    <div>
                         <h3>Accountant</h3>
-                        <div class="muted">Waleed Computer — Sep 2022 – Nov 2022</div>
+                        <div class="muted">Waleed Computer — <em>Sep 2022 – Nov 2022</em></div>
                     </div>
                 </section>
 
-                <section class="section">
+                <section class="panel section">
                     <h2>Projects</h2>
-                    <div class="card">
+                    <div class="panel" style="padding:12px; box-shadow:none;">
                         <ul>
                             <li><strong>MAK Store (Flutter, Firebase):</strong> Full-stack e-commerce app with auth,
                                 categories, cart, admin panel, and responsive UI.</li>
@@ -330,14 +423,14 @@
                             <li><strong>Amazon Clone (HTML, CSS):</strong> Responsive front-end replica with product
                                 layout.</li>
                             <li><strong>Lost Data Retrieval (Linux):</strong> Recovered deleted files on Ubuntu tools
-                                while applying security practices.</li>
+                                while applying security best practices.</li>
                             <li><strong>Tic-Tac-Toe (Python, Tkinter, Minimax):</strong> GUI game with AI opponent using
-                                Minimax algorithm.</li>
+                                the Minimax algorithm.</li>
                         </ul>
                     </div>
                 </section>
 
-                <section class="section">
+                <section class="panel section">
                     <h2>Certification</h2>
                     <ul>
                         <li>Python Programming Course — UST — Coursera</li>
@@ -349,9 +442,7 @@
             </main>
         </div>
 
-        <div class="row">
-            <div class="col-12 foot">References available on request.</div>
-        </div>
+        <div class="footer">References available on request.</div>
     </div>
 </body>
 
