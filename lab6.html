@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>M Asjad Kashif — Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0b1220;
+            --muted: #6b7b95;
+            --brand: #0d6efd;
+        }
+
+        body {
+            color: var(--ink)
+        }
+
+        .navbar {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .06)
+        }
+
+        .hero {
+            background: linear-gradient(180deg, rgba(13, 110, 253, .08), transparent 60%)
+        }
+
+        .section-title {
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--muted)
+        }
+
+        .skill-pill {
+            border: 1px solid rgba(13, 110, 253, .2);
+            padding: .45rem .7rem;
+            border-radius: 999px;
+            margin: .25rem;
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem
+        }
+
+        .skill-pill i {
+            opacity: .7
+        }
+
+        .card img {
+            object-fit: cover;
+            height: 180px
+        }
+
+        footer {
+            background: #0b1220;
+            color: #c9d4e5
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .2)
+        }
+
+        .gallery img {
+            object-fit: cover;
+            height: 420px
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">MAK</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Home -->
+    <header id="home" class="hero pt-5">
+        <div class="container py-5">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-7">
+                    <h1 class="display-5 fw-bold">M Asjad Kashif</h1>
+                    <p class="lead text-secondary">Full‑Stack Developer — PHP · Laravel · Flutter</p>
+                    <p class="mb-4">Runner‑up at <strong>NASA Space Apps Challenge 2025</strong>. I design and build
+                        end‑to‑end products from clean, responsive UIs to reliable backends.</p>
+                    <div class="d-flex gap-2">
+                        <a class="btn btn-primary" href="#projects"><i class="bi bi-rocket-takeoff"></i> View
+                            Projects</a>
+                        <a class="btn btn-outline-primary" href="#contact"><i class="bi bi-envelope"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D12AQHiWNCRjPrJ4w/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1687168438236?e=2147483647&v=beta&t=GraOriv1MlIgsVM6DgdKuzAv0kWiLOORCgi7wG7TUT0"
+                        class="img-fluid rounded-4 shadow" alt="hero image placeholder">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center gy-4">
+                <div class="col-md-5">
+                    <img src="https://d1ub0o53i85pdh.cloudfront.net/uploads/2021/09/Facebook-Linkedin-image-template-10.jpg"
+                        class="img-fluid rounded-4" alt="profile">
+                </div>
+                <div class="col-md-7">
+                    <p class="section-title mb-2">About</p>
+                    <h2 class="h3 fw-bold mb-3">Turning ideas into usable products</h2>
+                    <p class="text-secondary">I build with PHP/Laravel, MySQL, and modern frontend tools. Recent work
+                        includes Course Hub, Complaint Management System, Galaxy Glide, Smart Inventory System (Flask),
+                        and MAK Store e‑commerce app (Flutter).</p>
+                    <ul class="text-secondary mb-0">
+                        <li>Clean, maintainable code and fast, responsive UIs</li>
+                        <li>REST APIs, authentication, role‑based dashboards</li>
+                        <li>Component‑driven development with Bootstrap 5</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <p class="section-title mb-2">Skills</p>
+            <h2 class="h3 fw-bold mb-4">What I work with</h2>
+            <div class="row g-3">
+                <div class="col-6 col-md-3">
+                    <div class="p-3 border rounded-4 h-100">
+                        <h6 class="mb-2">Languages</h6>
+                        <div>
+                            <span class="skill-pill"><i class="bi bi-code-slash"></i> PHP</span>
+                            <span class="skill-pill">JavaScript</span>
+                            <span class="skill-pill">Dart</span>
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">SQL</span>
+                            <span class="skill-pill">Cpp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 border rounded-4 h-100">
+                        <h6 class="mb-2">Frameworks</h6>
+                        <div>
+                            <span class="skill-pill">Laravel</span>
+                            <span class="skill-pill">Flask</span>
+                            <span class="skill-pill">Flutter</span>
+                            <span class="skill-pill">Bootstrap</span>
+                            <span class="skill-pill">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 border rounded-4 h-100">
+                        <h6 class="mb-2">Frontend</h6>
+                        <div>
+                            <span class="skill-pill">HTML5</span>
+                            <span class="skill-pill">CSS3</span>
+                            <span class="skill-pill">Grid/Flex</span>
+                            <span class="skill-pill">Charts</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3 border rounded-4 h-100">
+                        <h6 class="mb-2">Tools</h6>
+                        <div>
+                            <span class="skill-pill">MySQL</span>
+                            <span class="skill-pill">Git/GitHub</span>
+                            <span class="skill-pill">Figma</span>
+                            <span class="skill-pill">Vercel</span>
+                            <span class="skill-pill">Ngrok</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <p class="section-title mb-2">Projects</p>
+            <h2 class="h3 fw-bold mb-4">Selected Work</h2>
+            <div class="row g-4">
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://yt3.googleusercontent.com/L2TIA3A8mT-Hr9ROFSCONDGgwmKUUB46OO561WKwOwtJQxMXISYQi5vczMhDSJc3o7P-qctbEgw=s900-c-k-c0x00ffffff-no-rj"
+                            class="card-img-top" alt="NASA Space Apps">
+                        <div class="card-body">
+                            <h5 class="card-title">NASA Space Apps 2025 — Runner‑up</h5>
+                            <p class="card-text text-secondary">Rapid‑prototyped a data‑driven space/earth visualization
+                                app with clear UX and performant APIs.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0"><span
+                                class="badge text-bg-primary">Laravel</span> <span class="badge text-bg-light">Bootstrap
+                                5</span></div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR38yMTRJHw5M_ehPnZvz65_48uMKbI5qV7qQ&s"
+                            class="card-img-top" alt="Course Hub">
+                        <div class="card-body">
+                            <h5 class="card-title">Course Hub</h5>
+                            <p class="card-text text-secondary">Learning platform with role‑based access, course CRUD,
+                                and progress tracking.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0"><span
+                                class="badge text-bg-primary">Laravel</span> <span
+                                class="badge text-bg-light">MySQL</span></div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://cms.srb.gos.pk/srbcms/images/cms.png" class="card-img-top"
+                            alt="Complaint Management">
+                        <div class="card-body">
+                            <h5 class="card-title">Complaint Management System</h5>
+                            <p class="card-text text-secondary">Ticketing/workflow app with pipelines, dashboards, and
+                                notifications.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0"><span
+                                class="badge text-bg-primary">Laravel</span> <span
+                                class="badge text-bg-light">Bootstrap</span></div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/astro/universe/internal_resources/332/Milky_Way_illustration-1.jpeg?w=800&h=800&fit=clip&crop=faces%2Cfocalpoint"
+                            class="card-img-top" alt="Galaxy Glide">
+                        <div class="card-body">
+                            <h5 class="card-title">Galaxy Glide</h5>
+                            <p class="card-text text-secondary">Space‑themed app with modular controllers and grid‑based
+                                UI.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0"><span
+                                class="badge text-bg-primary">Laravel</span></div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://www.altamira.ai/wp-content/uploads/2024/03/smart-inventory-management.jpg"
+                            class="card-img-top" alt="Smart Inventory">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Inventory System</h5>
+                            <p class="card-text text-secondary">Low‑stock alerts, barcode lookups, and CSV
+                                import/export.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0"><span class="badge text-bg-primary">Flask</span>
+                            <span class="badge text-bg-light">HTML/CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAAEmWf4VaWlnIB4AZPUea9vcDK6ch3JopwA&s"
+                            class="card-img-top" alt="MAK Store">
+                        <div class="card-body">
+                            <h5 class="card-title">MAK Store (e‑commerce)</h5>
+                            <p class="card-text text-secondary">Cross‑platform mobile app with product catalog, cart,
+                                and checkout.</p>
+                        </div>
+                        <div class="card-footer bg-white border-0 pt-0"><span
+                                class="badge text-bg-primary">Flutter</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional: Gallery Carousel -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <p class="section-title mb-2">Gallery</p>
+            <h2 class="h3 fw-bold mb-4">Screenshots</h2>
+            <div id="gallery" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner gallery rounded-4 shadow">
+                    <div class="carousel-item active"><img
+                            src="https://s3.ap-south-1.amazonaws.com/stage.radixweb.com/medium_Guide_to_Full_Stack_Development_000eb0b2d0.jpg"
+                            class="d-block w-100" alt="slide1"></div>
+                    <div class="carousel-item"><img src="https://miro.medium.com/1*V-Jp13LvtVc2IiY2fp4qYw.jpeg"
+                            class="d-block w-100" alt="slide2"></div>
+                    <div class="carousel-item"><img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAAEmWf4VaWlnIB4AZPUea9vcDK6ch3JopwA&s"
+                            class="d-block w-100" alt="slide3"></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#gallery" data-bs-slide="prev"><span
+                        class="carousel-control-prev-icon" aria-hidden="true"></span><span
+                        class="visually-hidden">Previous</span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#gallery" data-bs-slide="next"><span
+                        class="carousel-control-next-icon" aria-hidden="true"></span><span
+                        class="visually-hidden">Next</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <p class="section-title mb-2">Contact</p>
+            <h2 class="h3 fw-bold mb-4">Let’s work together</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <form class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                <div class="invalid-feedback">Please enter your name.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="you@example.com"
+                                    required>
+                                <div class="invalid-feedback">Please enter a valid email.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" class="form-control" rows="5"
+                                    placeholder="Tell me about your project..." required></textarea>
+                                <div class="invalid-feedback">Please include a short message.</div>
+                            </div>
+                            <div class="col-12 d-grid d-sm-flex gap-2">
+                                <button class="btn btn-primary" type="submit"><i class="bi bi-send"></i> Send</button>
+                                <a class="btn btn-outline-secondary" href="mailto:asjadkashif2004@gmail.com"><i
+                                        class="bi bi-envelope"></i> Email me directly</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="p-4 bg-light rounded-4 h-100">
+                        <h5 class="fw-semibold mb-3">Contact Info</h5>
+                        <p class="mb-1"><i class="bi bi-envelope me-2"></i> asjadkashif2004@gmail.com</p>
+                        <p class="text-secondary mb-0">Available for remote or hybrid roles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4">
+        <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center">
+            <small>© <span id="year"></span> M Asjad Kashif</small>
+            <div class="mt-2 mt-sm-0">
+                <span class="badge rounded-pill text-bg-light">Bootstrap 5</span>
+                <span class="badge rounded-pill text-bg-light">Responsive</span>
+                <span class="badge rounded-pill text-bg-light">Portfolio</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // year + simple Bootstrap validation
+        document.getElementById('year').textContent = new Date().getFullYear();
+        (() => {
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+</body>
+
+</html>
